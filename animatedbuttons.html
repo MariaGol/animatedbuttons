@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated buttons</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(76, 76, 76);
+            overflow: hidden;
+        }
+        button {
+            background: linear-gradient(to left, #D66D75, #E29587);
+            color: rgb(41, 30, 21);
+            padding: 30px;
+            font-size: 50px;
+            border: solid 5px rgb(41, 30, 21);
+            border-radius: 10px;
+            transition: .5s;
+            background-size: 200%;
+        }
+        button:hover {
+            background-position: right;
+        }
+        .blik {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            background-color:#E29587;
+            color: rgb(41, 30, 21);
+            padding: 10px 20px;
+            font-size: 50px;
+            border: solid 3px rgb(41, 30, 21);
+            border-radius: 10px;
+            overflow: hidden
+        }
+        .blik::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.5em;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: translateX(-4em) skewX(-45deg);
+            animation: move-light 2s infinite;
+        }
+        @keyframes move-light {
+            from {
+                transform: translateX(-4em) skewX(-45deg);
+            }
+            to {
+                transform: translateX(10em) skewX(-45deg);
+            }
+        }
+        p {
+            color: white;
+        }
+        .slide {
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 0, 0);
+            padding: 50px;
+            border: solid 5px rgb(255, 0, 0);
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-decoration: none;
+        }
+        .slide::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: bisque;
+            top: 0;
+            left: -100%;
+            transition: .5s;
+            z-index: -1;
+        }
+        .slide:hover::before {
+            left: 0;
+            overflow: hidden;
+        }
+        .slide:hover {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <button class="gradint">GRADIENT</button>
+    <p>Градиент при наведении</p>
+    <a href="#" class="blik">Кнопка с бликом</a>
+    <p>Постоянный блик</p>
+    <a href="#" class="slide">SLIDE FROM LEFT</a>
+    <p>Слайд при наведении слева</p>
+</body>
+</html>
