@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card design</title>
+    <style>
+        body {
+            background-color: #00A287;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .round {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        button {
+            color: rgb(255, 255, 255);
+            background-color: #FFA200;
+            border-width: 0;
+            border-radius: 15px;
+            padding: 15px;
+            font-size: 20px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        p {
+            color: #190773;
+            font-size: 40px;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.5em;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: translateX(-4em) skewX(-45deg);
+            animation: move-light 2s infinite;
+        }
+        @keyframes move-light {
+            from {
+                transform: translateX(-4em) skewX(-45deg);
+            }
+            to {
+                transform: translateX(10em) skewX(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <img src="./images/teacher.jpg" alt="Фото" class="round">
+    </div>
+    <div class="container2">
+        <h1>Приглашаем вас принять участие в наших <br> уроках по веб-дизайну</h1>
+        <p>30 января</p>
+        <h2>Урок ведет - Роман Гослин</h2>
+        <button>Принять участие</button>
+    </div>
+</body>
+</html>
